@@ -1,4 +1,4 @@
-module github.com/devgugga/gopportunities.git
+module github.com/devgugga/gopportunities
 
 go 1.21.5
 
