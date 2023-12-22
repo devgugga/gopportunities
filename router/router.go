@@ -2,15 +2,19 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"net/http"
 )
 
+// Initialize the API server on port 8080
 func Initialize() {
+	//Initialize Router
 	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "pong",
-		})
-	})
-	r.Run(":8080")
+
+	//Initialize Routes
+	initializeRoutes(r)
+
+	//Run the server
+	err := r.Run(":8080")
+	if err != nil {
+		return
+	}
 }
