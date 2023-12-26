@@ -1,0 +1,48 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This documentation describes the GoPportunities API endpoints.",
+        "title": "GoPportunities API",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.swagger.io/support",
+            "email": "support@swagger.io"
+        },
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/api/v1",
+    "paths": {
+        "/opening/": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "show all the job openings",
+                "operationId": "show-openings",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/router.opening"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "router.opening": {
+            "type": "object",
+            "properties": {
+                "jobs": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

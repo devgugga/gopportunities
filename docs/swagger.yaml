@@ -1,0 +1,32 @@
+basePath: /api/v1
+definitions:
+  router.opening:
+    properties:
+      jobs:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This documentation describes the GoPportunities API endpoints.
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  title: GoPportunities API
+  version: "1.0"
+paths:
+  /opening/:
+    get:
+      operationId: show-openings
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/router.opening'
+      summary: show all the job openings
+swagger: "2.0"
