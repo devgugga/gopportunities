@@ -1,6 +1,9 @@
 package main
 
 import (
+	"fmt"
+
+	"github.com/devgugga/gopportunities/config"
 	_ "github.com/devgugga/gopportunities/docs"
 	"github.com/devgugga/gopportunities/router"
 )
@@ -21,6 +24,14 @@ import (
 // @query.collection.format multi
 func main() {
 
+	// Initialize config
+	err := config.Init()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	// Initialize router
 	router.Initialize()
 
 }
