@@ -1,20 +1,14 @@
 version: "3.8"
-
 services:
-  db:
-    image: postgres
+  dcs-postgres:
+    image: postgres:latest
+    container_name: go-postgres
     restart: always
     environment:
       POSTGRES_USER: mustty
       POSTGRES_PASSWORD: mypass132
       POSTGRES_DB: gopportunities
-
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    restart: always
     ports:
       - 5432:5432
-    depends_on:
-      - db
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data

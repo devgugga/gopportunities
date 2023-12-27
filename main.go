@@ -1,11 +1,13 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/devgugga/gopportunities/config"
 	_ "github.com/devgugga/gopportunities/docs"
 	"github.com/devgugga/gopportunities/router"
+)
+
+var (
+	logger *config.Logger
 )
 
 // @title Gopportunities API
@@ -24,10 +26,12 @@ import (
 // @query.collection.format multi
 func main() {
 
+	logger = config.GetLogger("main")
+
 	// Initialize config
 	err := config.Init()
 	if err != nil {
-		fmt.Println(err)
+		logger.Errorf("Error initializing config: %v", err)
 		return
 	}
 
