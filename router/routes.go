@@ -10,6 +10,9 @@ import (
 // initializeRoutes provides all the application Routes.
 func initializeRoutes(r *gin.Engine) {
 
+	// Initialize handler.
+	handler.InitHandler()
+
 	//Set the api Path.
 	v1 := r.Group("/api/v1/")
 	{
