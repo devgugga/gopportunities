@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   dcs-postgres:
-    image: postgres:latest
+    image: postgres
     container_name: go-postgres
     restart: always
     environment:
